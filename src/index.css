@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+@font-face {
+  font-family: "Ebold";
+  src: url("./assets/fonts/Eina01-Bold.woff2");
+}
+@font-face {
+  font-family: "ERegular";
+  src: url("./assets/fonts/Eina01-Regular.woff2");
+}
+@font-face {
+  font-family: "Esemi";
+  src: url("./assets/fonts/Eina01-SemiBold.woff2");
+}
