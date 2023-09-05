@@ -1,8 +1,16 @@
-import React from "react";
-import Sidebar from "./Sidebar";
-import { Outlet } from "react-router-dom";
+import React, { useEffect } from 'react';
+import Sidebar from './Sidebar';
+import { Outlet, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useBoundedStore } from '../../store/store';
 
 const ProtectedLayout = () => {
+  const auth = useBoundedStore((state) => state.user);
+  const navigate = useNavigate();
+  const location = useLocation();
+  useEffect(() => {
+    if (!auth) return navigate('/');
+  }, []);
   return (
     <div className="flex">
       <div>

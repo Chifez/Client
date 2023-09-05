@@ -1,19 +1,22 @@
-import { useState } from "react";
-import Register from "./registerForm";
-import Modal from "./modal";
+import { useEffect } from 'react';
+import Register from './registerForm';
+import RegisterModal from './modal';
+import Modal from '../../components/modal';
+import { useBoundedStore } from '../../../store/store';
+import { useNavigate } from 'react-router-dom';
 
 const index = () => {
-  const [open, setIsopen] = useState(false);
+  const auth = useBoundedStore((state) => state.user);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!auth) return navigate('/');
+  }, []);
   return (
     <div className="relative">
-      <Register setIsOpen={setIsopen} />
-      <div
-        className={`${
-          open ? "fixed block top-0 left-0" : "hidden"
-        } w-full h-full`}
-      >
-        <Modal setIsOpen={setIsopen} />
-      </div>
+      <Register />
+      <Modal>
+        <RegisterModal />
+      </Modal>
     </div>
   );
 };

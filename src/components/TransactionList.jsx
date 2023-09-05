@@ -1,47 +1,47 @@
-import React from "react";
+import React from 'react';
 // import { IoCaretDownCircleOutline } from "react-icons/io";
-import { MdArrowDropDown } from "react-icons/md";
+import { MdArrowDropDown } from 'react-icons/md';
 const TransactionList = () => {
   const List = [
     {
       id: 1,
-      bank: "/bank.png",
-      name: "Chioma jesus",
-      date: "30th, May 2022",
-      amount: "-100,000",
-      status: "failed",
+      bank: '/bank.png',
+      name: 'Chioma jesus',
+      date: '30th, May 2022',
+      amount: '-100,000',
+      status: 'failed',
     },
     {
       id: 2,
-      bank: "/bank.png",
-      name: "Chioma jesus",
-      date: "30th, November 2021",
-      amount: "-100,000",
-      status: "sucess",
+      bank: '/bank.png',
+      name: 'Chioma jesus',
+      date: '30th, November 2021',
+      amount: '-100,000',
+      status: 'sucess',
     },
     {
       id: 3,
-      bank: "/bank.png",
-      name: "Joshua marcus",
-      date: "10th, January 2021",
-      amount: "-100,000",
-      status: "pending",
+      bank: '/bank.png',
+      name: 'Joshua marcus',
+      date: '10th, January 2021',
+      amount: '-100,000',
+      status: 'pending',
     },
     {
       id: 4,
-      bank: "/bank.png",
-      name: "Nneka chioma",
-      date: "31th, December 2021",
-      amount: "-100,000",
-      status: "sucess",
+      bank: '/bank.png',
+      name: 'Nneka chioma',
+      date: '31th, December 2021',
+      amount: '-100,000',
+      status: 'sucess',
     },
     {
       id: 5,
-      bank: "/bank.png",
-      name: "Chioma jesus",
-      date: "30th, May 2021",
-      amount: "-100,000",
-      status: "sucess",
+      bank: '/bank.png',
+      name: 'Chioma jesus',
+      date: '30th, May 2021',
+      amount: '-100,000',
+      status: 'sucess',
     },
   ];
   return (
@@ -69,7 +69,7 @@ const TransactionList = () => {
 const TransactList = ({ props }) => {
   const { bank, name, date, amount, status } = props;
   return (
-    <div className="flex justify-between border rounded-lg text-xs mb-2 p-2">
+    <div className="flex justify-between border rounded-lg text-xs mb-2 p-2 cursor-pointer">
       <div className="flex item-center gap-2">
         <img src={bank} alt="bank" className="w-7 h-7" />
         <div>
@@ -81,9 +81,9 @@ const TransactList = ({ props }) => {
         <div className="flex flex-col items-start">
           <p className="font-Esemi">{amount}</p>
           <p>
-            {status == "failed" ? (
+            {status == 'failed' ? (
               <Status icon="/declined.png" detail="Failed" />
-            ) : status == "sucess" ? (
+            ) : status == 'sucess' ? (
               <Status icon="/approved.png" detail="Completed" />
             ) : (
               <Status icon="/pending.png" detail="Pending" />

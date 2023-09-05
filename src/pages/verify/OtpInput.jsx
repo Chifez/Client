@@ -1,9 +1,9 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from 'react';
 
 let currentIndex = 0;
 
-const OtpInput = () => {
-  const [otp, setOtp] = useState(new Array(6).fill(""));
+const OtpInput = ({ onChange }) => {
+  const [otp, setOtp] = useState(new Array(4).fill(''));
   const [activeIndex, setActiveIndex] = useState(0);
 
   const inputRef = useRef(null);
@@ -19,12 +19,14 @@ const OtpInput = () => {
       setActiveIndex(currentIndex + 1);
     }
     setOtp(newOTP);
+    const updatedOtp = newOTP.join('');
+    onChange(updatedOtp);
   };
 
   const handleBackSpace = (e, index) => {
     console.log(e.key);
     currentIndex = index;
-    if (e.key === "Backspace") setActiveIndex(currentIndex - 1);
+    if (e.key === 'Backspace') setActiveIndex(currentIndex - 1);
   };
 
   useEffect(() => {
