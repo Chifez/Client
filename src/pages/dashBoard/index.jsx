@@ -1,6 +1,6 @@
 import React from 'react';
 import ProtectedLayout from '../../components/ProtectedLayout';
-import Toggle from '../../components/Toggle';
+import Toggle from '../../components/dashboard/Toggle';
 import Main from './Main';
 
 const Dashboard = () => {

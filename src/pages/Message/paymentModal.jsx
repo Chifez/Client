@@ -1,5 +1,5 @@
-import TextInput from '../../components/TextInput';
-import Button from '../../components/button';
+import TextInput from '../../components/shared/TextInput';
+import Button from '../../components/shared/Button';
 import { MdContentCopy } from 'react-icons/md';
 import { GiCheckMark } from 'react-icons/gi';
 import { Formik } from 'formik';

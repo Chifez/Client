@@ -1,5 +1,5 @@
 import React from 'react';
-import { useBoundedStore } from '../../store/store';
+import { useBoundedStore } from '../../../store/store';
 const Modal = ({ children }) => {
   const open = useBoundedStore((state) => state.open);
   const closeModal = useBoundedStore((state) => state.closeModal);

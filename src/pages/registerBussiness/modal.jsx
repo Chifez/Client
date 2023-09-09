@@ -1,6 +1,6 @@
 import React from 'react';
 import { FiCheck } from 'react-icons/fi';
-import Button from '../../components/button';
+import Button from '../../components/shared/Button';
 import { useNavigate } from 'react-router-dom';
 import { useBoundedStore } from '../../../store/store';
 

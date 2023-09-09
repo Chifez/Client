@@ -6,9 +6,9 @@ import { IoIosArrowBack, IoMdAttach } from 'react-icons/io';
 import { SlOptionsVertical } from 'react-icons/sl';
 import { BiCheckDouble } from 'react-icons/bi';
 import { MdSend } from 'react-icons/md';
-import Button from '../../components/button';
+import Button from '../../components/shared/Button';
 import { useBoundedStore } from '../../../store/store';
-import Modal from '../../components/modal';
+import Modal from '../../components/shared/modal';
 import PaymentModal from './paymentModal';
 import PreviewCard from './PreviewCard';
 

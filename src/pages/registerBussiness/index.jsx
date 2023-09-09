@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import Register from './registerForm';
 import RegisterModal from './modal';
-import Modal from '../../components/modal';
+import Modal from '../../components/shared/modal';
 import { useBoundedStore } from '../../../store/store';
 import { useNavigate } from 'react-router-dom';
 

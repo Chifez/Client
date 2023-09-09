@@ -1,34 +1,34 @@
 import React from 'react';
-import Card from '../../components/Card';
-import TransactionList from '../../components/TransactionList';
+import Card from '../../components/dashboard/Card';
+import TransactionList from '../../components/dashboard/TransactionList';
 import { Link } from 'react-router-dom';
 
 const Main = () => {
   const cardlist = [
     {
       name: 'orders',
-      link:'/dashboard/orders',
+      link: '/dashboard/orders',
       icon: 'order.png',
       desc: 'View incoming requests from interested buyers',
       extraStyle: 'border border-dashed border-[black] bg-transparent',
     },
     {
       name: 'Add new products',
-      link:'/dashboard/add',
+      link: '/dashboard/add',
       icon: '/addProduct.png',
       desc: 'View exixting products,Edit or delete item',
       extraStyle: 'border border-dashed border-[black] bg-transparent',
     },
     {
       name: 'View Products',
-      link:'/dashboard/view',
+      link: '/dashboard/view',
       icon: '/viewProduct.png',
       desc: 'Update your store by adding new items to your shelf',
       extraStyle: 'border border-dashed border-[black] bg-transparent',
     },
     {
       name: 'Records',
-      link:'/dashboard/records',
+      link: '/dashboard/records',
       icon: '/Records.png',
       desc: 'View transaction details of all products you reserve',
       extraStyle: 'bg-[white] shadow-xl',

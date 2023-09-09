@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import TextInput from '../../components/TextInput';
-import Button from '../../components/button';
+import TextInput from '../../components/shared/TextInput';
+import Button from '../../components/shared/Button';
 import { handleChange } from '../../utils/functions/auth/handleChange';
 import { signIn } from '../../utils/functions/auth/signIn';
 import Layout from '../../components/layout';
-import Carousel from '../../components/Slider';
+import Carousel from '../../components/login/Slider';
 import { Formik } from 'formik';
 import { SignInValidation } from '../../utils/validationSchema/validationSchema';
 import { useBoundedStore } from '../../../store/store';
@@ -13,11 +13,11 @@ import { useBoundedStore } from '../../../store/store';
 const Login = () => {
   const navigate = useNavigate();
   const login = useBoundedStore((state) => state.login);
+  const isFetching = useBoundedStore((state) => state.loading);
   const initialValue = {
     email: '',
     password: '',
   };
-
   return (
     <Carousel>
       <Layout>
@@ -84,7 +84,7 @@ const Login = () => {
                   <div className="text-start mb-5 ">
                     <p>
                       Forgot your password?{' '}
-                      <Link to="/" className="text-[#00398E] px-2">
+                      <Link to="/resetpassword" className="text-[#00398E] px-2">
                         Reset it here
                       </Link>
                     </p>
@@ -95,6 +95,7 @@ const Login = () => {
                   handleClick={handleSubmit}
                   name="Log in"
                   extraclass={`w-[25rem] h-[3rem] rounded-lg`}
+                  loading={isFetching}
                 />
               </>
             )}

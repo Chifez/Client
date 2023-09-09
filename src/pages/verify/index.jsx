@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Button from '../../components/button';
+import Button from '../../components/shared/Button';
 import OtpInput from './OtpInput';
 import Layout from '../../components/layout';
 import { useNavigate } from 'react-router-dom';

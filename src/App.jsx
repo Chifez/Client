@@ -8,12 +8,11 @@ import Dashboard from './pages/dashBoard';
 import Message from './pages/Message';
 import Setting from './pages/Settings';
 import Purchase from './pages/Purchase';
-import Sidebar from './components/Sidebar';
 import History from './pages/History';
 import Error from './pages/404/Error';
-import OrdersContent from './components/OrdersContent';
+import OrdersContent from './components/dashboard/OrdersContent';
+import ResetPassword from './pages/ResetPassword';
 import ProtectedLayout from './components/ProtectedLayout';
-import Carousel from './components/Slider';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Chat from './pages/Message/Chat';
@@ -33,7 +32,8 @@ function App() {
   return (
     <Routes>
       <Route index element={<Login />} />
-      <Route path="/createAccount" element={<CreateAccount />} />
+      <Route path="/createaccount" element={<CreateAccount />} />
+      <Route path="/resetpassword" element={<ResetPassword />} />
       <Route path="/verify" element={<Verify />} />
       <Route path="/register" element={<Register />} />
       <Route element={<ProtectedLayout />}>

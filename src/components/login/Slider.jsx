@@ -1,6 +1,6 @@
-import { useState, useRef } from "react";
-import Slider from "react-slick";
-import "./myStyle.css";
+import { useState, useRef } from 'react';
+import Slider from 'react-slick';
+import '../myStyle.css';
 
 const Carousel = ({ children }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -12,9 +12,9 @@ const Carousel = ({ children }) => {
   };
 
   const images = [
-    { link: "/img1.png", desc: "Reserve and Pay for your selected item" },
-    { link: "/img2.png", desc: "View items and shelf details" },
-    { link: "/img3.png", desc: "Discover malls around you" },
+    { link: '/img1.png', desc: 'Reserve and Pay for your selected item' },
+    { link: '/img2.png', desc: 'View items and shelf details' },
+    { link: '/img3.png', desc: 'Discover malls around you' },
   ];
 
   const settings = {
@@ -26,8 +26,8 @@ const Carousel = ({ children }) => {
     speed: 1000,
     // fade: true,
     autoplaySpeed: 4000,
-    cssEase: "linear",
-    dotsClass: "slick-dots custom-dots",
+    cssEase: 'linear',
+    dotsClass: 'slick-dots custom-dots',
     beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex),
   };
 
@@ -75,7 +75,7 @@ const SliderNav = ({ handleChange, currentSlide, slide }) => {
     <span
       onClick={() => handleChange(slide)}
       className={`bg-white ${
-        currentSlide === slide ? "w-5" : "w-3"
+        currentSlide === slide ? 'w-5' : 'w-3'
       } h-3 rounded-full  transition-[width] duration-500`}
     ></span>
   );

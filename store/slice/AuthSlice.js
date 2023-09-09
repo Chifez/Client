@@ -5,10 +5,25 @@ export const AuthSlice = (set) => ({
   error: false,
   loading: false,
   message: '',
-  login: (values, navigate) => {
-    console.log(values), set({ user: true });
-    navigate('/dashboard/home');
+  login: async (values, navigate) => {
+    const { email, password } = values;
+    set({ loading: true });
+    try {
+      const res = await api.post('/auth/login', {
+        email,
+        password,
+      });
+      set({ userID: res.data.id });
+      set({ user: true });
+      set({ loading: false });
+      navigate('/dashboard');
+    } catch (error) {
+      set({ error: true }), set({ message: error.message });
+      set({ loading: false });
+      console.log(error);
+    }
   },
+
   createUser: async (values, navigate) => {
     const { fullName, email, password, confirmPassword } = values;
     set({ loading: true });
@@ -23,16 +38,29 @@ export const AuthSlice = (set) => ({
       set({ message: response.data.message });
       set({ loading: false });
       navigate('/verify');
-      console.log(response, response.data.message, response.data.data);
-      return response;
     } catch (error) {
       set({ error: true }), set({ message: error.message });
       set({ loading: false });
       console.log(error);
     }
   },
-  logout: () => {},
-  verifyUser: async (otp) => {
+  logout: async (navigate) => {
+    set({ loading: true });
+    try {
+      const res = await api.get('/auth/logout');
+      set({ userID: null });
+      set({ loading: false });
+      set({
+        message: res.data.message,
+      });
+      navigate('/');
+    } catch (error) {
+      set({ error: true }), set({ message: error.message });
+      set({ loading: false });
+      console.log(error);
+    }
+  },
+  verifyUser: async (otp, navigate) => {
     set({ loading: true });
     try {
       const res = await api.post('/auth/verify', {
@@ -43,6 +71,42 @@ export const AuthSlice = (set) => ({
         set({ user: true });
         set({ loading: false });
         navigate('/register');
+      }
+    } catch (error) {
+      set({ error: true }), set({ message: error.message });
+      set({ loading: false });
+      console.log(error);
+    }
+  },
+  forgotPassword: async (email, navigate) => {
+    set({ loading: true });
+    try {
+      const res = await api.post('/auth/forgotpassword', {
+        email,
+      });
+      if (res.data.success) {
+        set({ user: true });
+        set({ loading: false });
+        navigate('/verify');
+      }
+    } catch (error) {
+      set({ error: true }), set({ message: error.message });
+      set({ loading: false });
+      console.log(error);
+    }
+  },
+  createPassword: async (password, confirmPassword, navigate) => {
+    set({ loading: true });
+    try {
+      const res = await api.patch('/auth/resetpassword', {
+        userid: userID,
+        password,
+        passwordConfirm: confirmPassword,
+      });
+      if (res.data.success) {
+        set({ user: true });
+        set({ loading: false });
+        navigate('/login');
       }
     } catch (error) {
       set({ error: true }), set({ message: error.message });

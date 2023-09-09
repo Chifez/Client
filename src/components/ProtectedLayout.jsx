@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Sidebar from './Sidebar';
+import Sidebar from './shared/Sidebar';
 import { Outlet, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useBoundedStore } from '../../store/store';

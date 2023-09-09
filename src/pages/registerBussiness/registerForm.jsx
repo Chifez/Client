@@ -1,7 +1,7 @@
 import Layout from '../../components/layout';
-import TextInput from '../../components/TextInput';
-import Button from '../../components/button';
-import Upload from '../../components/Upload';
+import TextInput from '../../components/shared/TextInput';
+import Button from '../../components/shared/Button';
+import Upload from '../../components/login/Upload';
 import { Formik } from 'formik';
 import { useBoundedStore } from '../../../store/store';
 

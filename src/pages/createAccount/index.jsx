@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import TextInput from '../../components/TextInput';
-import Button from '../../components/button';
+import TextInput from '../../components/shared/TextInput';
+import Button from '../../components/shared/Button';
 import Layout from '../../components/layout';
 import { Link, useNavigate } from 'react-router-dom';
 // import { createAccount } from '../../utils/functions/auth/createAccount';
 import { handleChange } from '../../utils/functions/auth/handleChange';
-import Carousel from '../../components/Slider';
+import Carousel from '../../components/login/Slider';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { Formik } from 'formik';
 import { SignupValidation } from '../../utils/validationSchema/validationSchema';
@@ -22,11 +22,6 @@ const CreateAccount = () => {
   };
 
   const navigate = useNavigate();
-
-  const handleSignUp = (values) => {
-    createAccount(values, navigate);
-    console.log(values);
-  };
 
   return (
     <Carousel>
@@ -49,7 +44,7 @@ const CreateAccount = () => {
             initialValues={initialValue}
             validationSchema={SignupValidation}
             onSubmit={(values) => {
-              handleSignUp(values);
+              createAccount(values, navigate);
             }}
           >
             {({
