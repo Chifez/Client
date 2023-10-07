@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from '../../components/dashboard/Card';
 import TransactionList from '../../components/dashboard/TransactionList';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 
 const Main = () => {
+  // const [cardLink, setCardLink] = useState(useSearchParams.get('cards'));
   const cardlist = [
     {
       name: 'orders',

@@ -20,8 +20,8 @@ const Verify = () => {
   const verifyAccount = () => {
     const otp = otpInput.replace(/\D/g, '');
     verify(otp);
-    console.log('OTP submitted:', otp);
-    navigate('/register');
+    // console.log('OTP submitted:', otp);
+    // navigate('/register');
   };
 
   const updateCountdown = () => {
@@ -66,7 +66,13 @@ const Verify = () => {
         </form>
         <div className="text-[#434041] flex flex-col gap-2 text-center font-Esemi text-sm">
           <span>{formattedTime}</span>
-          <button onClick={handleResendClick} disabled={isButtonDisabled}>
+          <button
+            onClick={handleResendClick}
+            disabled={isButtonDisabled}
+            className={`text-[#00398E] ${
+              isButtonDisabled && 'cursor-not-allowed text-gray-600'
+            } `}
+          >
             Resend OTP
           </button>
         </div>

@@ -175,7 +175,7 @@ const Card = ({ item }) => {
               )}
               <div className="flex w-full items-end gap-1 justify-end">
                 <p className="text-[10px]">{item.time}</p>
-                {item.messageID === 'user' && (
+                {item.messageID !== 'user' && (
                   <BiCheckDouble className="w-3 h-3 text-[#3F3B3B]" />
                 )}
               </div>

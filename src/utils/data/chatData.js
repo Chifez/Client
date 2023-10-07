@@ -11,13 +11,13 @@ export const chats = [
         imageURL: null,
       },
       {
-        messageID: 'admin',
+        messageID: 'Admin',
         time: '7:33am',
         message: ["good morning ma'am", 'yes we have bread'],
         imageURL: null,
       },
       {
-        messageID: 'admin',
+        messageID: 'Admin',
         time: '7:33am',
         message: [
           'we have the roban bread and dangote bread currently in stock',
@@ -85,7 +85,7 @@ export const chats = [
         imageURL: null,
       },
       {
-        messageID: 'admin',
+        messageID: 'Admin',
         time: '7:33am',
         message: ['good morning', 'yes we have detergent'],
         imageURL: null,
@@ -110,7 +110,7 @@ export const chats = [
         imageURL: null,
       },
       {
-        messageID: 'admin',
+        messageID: 'Admin',
         time: '7:33am',
         message: ['good morning', 'yes we have egg'],
         imageURL: null,
@@ -135,7 +135,7 @@ export const chats = [
         imageURL: null,
       },
       {
-        messageID: 'admin',
+        messageID: 'Admin',
         time: '7:33am',
         message: ['good morning', 'yes we have bread'],
         imageURL: null,
@@ -160,7 +160,7 @@ export const chats = [
         imageURL: null,
       },
       {
-        messageID: 'admin',
+        messageID: 'Admin',
         time: '7:33am',
         message: ['good morning', 'yes we have bread'],
         imageURL: null,
@@ -186,7 +186,7 @@ export const chats = [
         imageURL: null,
       },
       {
-        messageID: 'admin',
+        messageID: 'Admin',
         time: '7:33am',
         message: ['good morning', 'yes we have bread'],
         imageURL: null,
@@ -211,7 +211,7 @@ export const chats = [
         imageURL: null,
       },
       {
-        messageID: 'admin',
+        messageID: 'Admin',
         time: '7:33am',
         message: ['good morning', 'yes we have bread'],
         imageURL: null,
@@ -236,7 +236,7 @@ export const chats = [
         imageURL: null,
       },
       {
-        messageID: 'admin',
+        messageID: 'Admin',
         time: '7:33am',
         message: ['good morning', 'yes we have bread'],
         imageURL: null,
@@ -261,7 +261,7 @@ export const chats = [
         imageURL: null,
       },
       {
-        messageID: 'admin',
+        messageID: 'Admin',
         time: '7:33am',
         message: ['good morning', 'yes we have bread'],
         imageURL: null,
@@ -287,7 +287,7 @@ export const chats = [
         imageURL: null,
       },
       {
-        messageID: 'admin',
+        messageID: 'Admin',
         time: '7:33am',
         message: ['good morning', 'yes we have bread'],
         imageURL: null,

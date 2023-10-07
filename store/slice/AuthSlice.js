@@ -1,10 +1,11 @@
 import api from '../../src/utils/functions/helper/baseUrl';
+import { toast } from 'react-toastify';
+
 export const AuthSlice = (set) => ({
-  user: false,
+  user: true,
   userID: null,
   error: false,
   loading: false,
-  message: '',
   login: async (values, navigate) => {
     const { email, password } = values;
     set({ loading: true });
@@ -18,8 +19,8 @@ export const AuthSlice = (set) => ({
       set({ loading: false });
       navigate('/dashboard');
     } catch (error) {
-      set({ error: true }), set({ message: error.message });
-      set({ loading: false });
+      set({ error: true }), set({ loading: false });
+      toast.error(error.message);
       console.log(error);
     }
   },
@@ -35,12 +36,12 @@ export const AuthSlice = (set) => ({
         passwordConfirm: confirmPassword,
       });
       set({ userID: response.data.data });
-      set({ message: response.data.message });
       set({ loading: false });
       navigate('/verify');
     } catch (error) {
-      set({ error: true }), set({ message: error.message });
+      set({ error: true });
       set({ loading: false });
+      toast.error(error.message);
       console.log(error);
     }
   },
@@ -50,13 +51,11 @@ export const AuthSlice = (set) => ({
       const res = await api.get('/auth/logout');
       set({ userID: null });
       set({ loading: false });
-      set({
-        message: res.data.message,
-      });
       navigate('/');
     } catch (error) {
-      set({ error: true }), set({ message: error.message });
+      set({ error: true });
       set({ loading: false });
+      toast.error(error.message);
       console.log(error);
     }
   },
@@ -73,8 +72,9 @@ export const AuthSlice = (set) => ({
         navigate('/register');
       }
     } catch (error) {
-      set({ error: true }), set({ message: error.message });
+      set({ error: true });
       set({ loading: false });
+      toast.error(error.message);
       console.log(error);
     }
   },
@@ -90,8 +90,9 @@ export const AuthSlice = (set) => ({
         navigate('/verify');
       }
     } catch (error) {
-      set({ error: true }), set({ message: error.message });
+      set({ error: true });
       set({ loading: false });
+      toast.error(error.message);
       console.log(error);
     }
   },
@@ -109,8 +110,9 @@ export const AuthSlice = (set) => ({
         navigate('/login');
       }
     } catch (error) {
-      set({ error: true }), set({ message: error.message });
+      set({ error: true });
       set({ loading: false });
+      toast.error(error.message);
       console.log(error);
     }
   },
